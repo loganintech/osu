@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "battleships",
+                "projectName": "battleships",
+                "workingDirectory": "/home/logan/Dev/school/cs361-assignments/project-nope-rope",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "battleships",
+                "projectName": "battleships",
+                "workingDirectory": "/home/logan/Dev/school/cs361-assignments/project-nope-rope",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}

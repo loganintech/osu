@@ -1,0 +1,1009 @@
+<html>
+
+<head>
+    
+        <!--Get datatables CSS files needed for table styling-->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/zf-6.4.3/jq-3.3.1/dt-1.10.20/b-1.6.1/sl-1.3.1/datatables.min.css"/>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- jQuery UI -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+        <!--get datatables JS and jQuery libraries needed-->
+        <script type="text/javascript" src="https://cdn.datatables.net/v/zf-6.4.3/jq-3.3.1/dt-1.10.20/b-1.6.1/sl-1.3.1/datatables.min.js"></script> 
+        <!-- Scripts for sending data to back end-->
+        <script type="text/javascript" src="./scripts/general.js"></script>
+        <script type="text/javascript" src="./scripts/customers.js"></script>
+        <script type="text/javascript" src="./scripts/movies.js"></script>
+        <script type="text/javascript" src="./scripts/theaters.js"></script>
+        <script type="text/javascript" src="./scripts/rooms.js"></script>
+        <script type="text/javascript" src="./scripts/tickets.js"></script>
+        <script type="text/javascript" src="./scripts/showings.js"></script>
+ 
+    
+    <!--start dataTable table.-->
+<script> $( window ).on("load", setupManageMovies);</script>
+<script> $( window ).on("load", setupManageRooms);</script>
+<script> $( window ).on("load", setupManageCustomers);</script>
+<script> $( window ).on("load", setupManageTheaters);</script>
+<script> $( window ).on("load", setupManageShowings);</script>
+<script> $( window ).on("load", setupManageTickets);</script>
+
+</head>
+
+
+<div class="jumbotron text-left">
+        <h1>Good Movies Inc.</h1>
+</div>
+
+
+<body>
+
+<!--Manage tab, here is where you will be able to change and add to most tables-->
+<div class="tabbable boxed parentTabs p-4">
+                <div class="tab-pane" id="manage">
+                        <div class="tabbable">
+                                                
+                                    <p>Control all your theaters from one easy place</p>
+
+                                <!--navigation buttons for manage functions-->
+
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                        <a href="#ManageMovies" class="nav-link active" data-toggle="tab" onclick="adjustCols()">Movies</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#ManageTheaters" class="nav-link" data-toggle="tab" onclick="adjustCols()">Theaters</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#ManageShowings" class="nav-link" data-toggle="tab" onclick="adjustCols()">Showings</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#ManageTickets" class="nav-link" data-toggle="tab" onclick="adjustCols()">Tickets</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#ManageRooms" class="nav-link" data-toggle="tab" onclick="adjustCols()">Rooms</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#ManageCustomers" class="nav-link" data-toggle="tab" onclick="adjustCols()">Customers</a>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content">
+                                <!--movies search menu and table-->
+                                    <div class="tab-pane fade show active" id="ManageMovies">
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade show active" id="ManageMovies">
+                                                <div class="col-sm-2">
+                                                    <!--control buttons for manage movies-->
+                                                    <form>
+                                                    <!-- Select a Movie: <input type="text" class="form-control-sm" name="ManageMoviesSearch">Find Movie</select> -->
+                                                                   <!-- <input class="form-control-sm" type="button" value="Search"> -->
+                                                                   <br> <!--add a lazy mans margin-->
+                                                                   <input class="btn btn-dark" type="button" value="Delete" data-toggle="modal" data-target="#deleteMovieModal">
+                                                                   <input class="btn btn-dark" type="button" value="Add" data-toggle="modal" data-target="#addMovieModal">
+                                                                   <input class="btn btn-dark" type="button" value="Edit" id="editMovieModalBut" data-toggle="modal" data-target="#editMovieModal">
+                                                    </form>
+                                                </div>
+<!--Region: Add Update Delete modals for Movies Table-->
+                                                <!--add modal for manage movies-->
+                                                <div class="modal" id="addMovieModal">
+                                                    <div class="modal-dialog modal-md modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <!--header-->
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Add a Movie</h4>
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            </div>
+                                                            <!--content form-->
+                                                            <div class="modal-body">
+                                                                <form class="form-horizontal">
+                                                                    <div class="form-group">
+                                                                        <label for="AddMovieTitle" class="col-sm-2 control-label">Title:</label>
+                                                                        <div class="col-sm-10">
+                                                                            <input class="form-control" type="text" id="AddMovieTitle" name="MovieTitle">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="AddMovieRating" class="col-sm-2 control-label">Rating:</label>
+                                                                        <div class="col-sm-10">
+                                                                            <input class="form-control" type="text" id="AddMovieRating" name="MovieRating">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="AddMovieGenre" class="col-sm-2 control-label">Genre:</label>
+                                                                        <div class="col-sm-10">
+                                                                            <input class="form-control" type="text" id="AddMovieGenre" name="MovieGenre">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="AddMovieRunTime" class="col-sm-3 control-label">Run-Time:</label>
+                                                                        <div class="col-sm-10">
+                                                                            <input class="form-control" type="text" id="AddMovieRunTime" name="MovieLength">
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <!--footer-->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" id="addMovieSubmitBut" data-dismiss="modal">Ok</button>
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                               <!--update delete modals for manage movies-->
+                                                <div class="modal" id="editMovieModal">
+                                                    <div class="modal-dialog modal-md modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <!--header-->
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Edit Movie</h4>
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            </div>
+                                                            <!--content form-->
+                                                            <div class="modal-body">
+                                                                <form class="form-horizontal">
+                                                                    <div class="form-group">
+                                                                        <label for="EditMovieTitle" class="col-sm-2 control-label">Title:</label>
+                                                                        <div class="col-sm-10">
+                                                                            <input class="form-control" type="text" id="EditMovieTitle" name="EditMovieTitle" placeholder="Pre-Filled Title">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="EditMovieRating" class="col-sm-2 control-label">Rating:</label>
+                                                                        <div class="col-sm-10">
+                                                                            <input class="form-control" type="text" id="EditMovieRating" name="EditMovieRating" placeholder="Pre-Filled Rating">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="EditMovieGenre" class="col-sm-2 control-label">Genre:</label>
+                                                                        <div class="col-sm-10">
+                                                                            <input class="form-control" type="text" id="EditMovieGenre" name="EditMovieGenre" placeholder="Pre-Filled Genre">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="EditMovieRunTime" class="col-sm-3 control-label">Run-Time:</label>
+                                                                        <div class="col-sm-10">
+                                                                            <input class="form-control" type="text" id="EditMovieRunTime" name="MovieLengthUpdate" placeholder="Pre-Filled Run Time">
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <!--footer-->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" id="editMovieSubmitBut" data-dismiss="modal">Ok</button>
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!--delete modals for manage movies-->
+                                                <div class="modal" id="deleteMovieModal">
+                                                    <div class="modal-dialog modal-sm modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <!--header-->
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Are you sure?</h4>
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            </div>
+                                                            <!--content form-->
+                                                            <div class="modal-body">
+                                                                <form class="form-horizontal">
+                                                                    <button type="submit" class="btn btn-danger" id="deleteMovieSubmitBut"  data-dismiss="modal">Yes</button>
+                                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                                                </form>
+                                                            </div>
+                                                            <!--footer-->
+                                                            <div class="modal-footer">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+<!--End Region-->
+
+
+                                                <!--manage movie table-->
+                                                <table id="manageMoviesTable" class="display">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>MovieID</th>
+                                                            <th>Title</th>
+                                                            <th>Rating</th>
+                                                            <th>Genre</th>
+                                                            <th>Run Time</th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                <!--Theaters search menu and table-->
+                                    <div class="tab-pane fade" id="ManageTheaters">
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade show active" id="ManageTheaters">
+                                                <div class="col-sm-2">
+                                                    <form>
+                                                    <!-- Select a Theater: <input class="form-control-sm" type="text" name="TheatreNameSelect">Find Theater</select> -->
+                                                    <br>
+                                                                   <!-- <input class="form-control-sm" type="button" value="Search"> -->
+                                                                   <input class="btn btn-dark" type="button" value="Delete" data-toggle="modal" data-target="#deleteTheaterModal">
+                                                                   <input class="btn btn-dark" type="button" value="Add" data-toggle="modal" data-target="#addTheaterModal">
+                                                                   <input class="btn btn-dark" type="button" value="Edit" id="editTheaterBut" data-toggle="modal" data-target="#editTheaterModal">
+                                                    </form>
+                                                </div>
+
+<!--Region: Add Update Delete modals for Theater Table-->
+                                                <!--add modal for manage theaters-->
+                                                <div class="modal" id="addTheaterModal">
+                                                        <div class="modal-dialog modal-md modal-dialog-centered">
+                                                            <div class="modal-content">
+                                                                <!--header-->
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Add a Theater</h4>
+                                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                </div>
+                                                                <!--content form-->
+                                                                <div class="modal-body">
+                                                                    <form class="form-horizontal">
+                                                                        <div class="form-group">
+                                                                        <label for="TheaterNameAdd" class="col-sm-2 control-label">Name:</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" id="TheaterNameAdd" name="TheaterNameAdd" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="TheaterAddressAdd" class="col-sm-2 control-label">Address:</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" id="TheaterAddressAdd" name="TheaterAddressAdd" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="TheaterAddress2Add" class="col-sm-2 control-label">Address 2:</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" id="TheaterAddress2Add" name="TheaterAddress2Add" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="TheaterCityAdd" class="col-sm-2 control-label">City</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" id="TheaterCityAdd" name="TheaterCityAdd" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="TheaterStateAdd" class="col-sm-2 control-label">State</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" id="TheaterStateAdd" name="TheaterStateAdd" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="TheaterZipAdd" class="col-sm-3 control-label">Zip</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" id="TheaterZipAdd" name="TheaterZipAdd" placeholder=""> 
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                                <!--footer-->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="submitNewTheaterBut">Ok</button>
+                                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+    
+                                                   <!--update modals for manage theaters-->
+                                                    <div class="modal" id="editTheaterModal">
+                                                        <div class="modal-dialog modal-md modal-dialog-centered">
+                                                            <div class="modal-content">
+                                                                <!--header-->
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Update Theater Information</h4>
+                                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                </div>
+                                                                <!--content form-->
+                                                                <div class="modal-body">
+                                                                    <form class="form-horizontal">
+                                                                        <div class="form-group">
+                                                                            <label for="TheaterNameUpdate" class="col-sm-2 control-label">Name:</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" id="TheaterNameUpdate" name="TheaterNameUpdate" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="TheaterAddressUpdate" class="col-sm-2 control-label">Address:</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" id="TheaterAddressUpdate" name="TheaterAddressUpdate" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="Address2" class="col-sm-2 control-label">Address 2:</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" id="TheaterAddress2Update" name="TheaterAddress2Update" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="City" class="col-sm-2 control-label">City</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" id="TheaterCityUpdate" name="TheaterCityUpdate" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="State" class="col-sm-2 control-label">State</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" id="TheaterStateUpdate" name="TheaterStateUpdate" placeholder="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="Zip" class="col-sm-3 control-label">Zip</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" id="TheaterZipUpdate" name="TheaterZipUpdate" placeholder=""> 
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                                <!--footer-->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-danger" id="EditTheaterSubmitBut" data-dismiss="modal">Ok</button>
+                                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+    
+                                                    <!--delete modals for manage theaters-->
+                                                    <div class="modal" id="deleteTheaterModal">
+                                                        <div class="modal-dialog modal-sm modal-dialog-centered">
+                                                            <div class="modal-content">
+                                                                <!--header-->
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Are you sure?</h4>
+                                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                </div>
+                                                                <!--content form-->
+                                                                <div class="modal-body">
+                                                                    <form class="form-horizontal">
+                                                                        <button type="submit" class="btn btn-danger" id="deleteTheaterSubmitBut" data-dismiss="modal">Yes</button>
+                                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                                                    </form>
+                                                                </div>
+                                                                <!--footer-->
+                                                                <div class="modal-footer">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+    <!--End Region-->
+
+                                                <table id="manageTheatersTable" class="display">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>TheaterID</th>
+                                                                <th>Name</th>
+                                                                <th>Address</th>
+                                                                <th>Address 2</th>
+                                                                <th>City</th>
+                                                                <th>State</th>
+                                                                <th>Zip</th>
+                                                            </tr>
+                                                        </thead>
+                                                    </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                <!--Showings search menu and table-->
+                                    <div class="tab-pane fade" id="ManageShowings">
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade show active" id="ManageShowings">
+                                                <div class="col-sm-2">
+                                                    <form>
+                                                    <!-- Select a Theater: <select class="form-control-sm" name="TheatreNameSelect">Find Theatre</select>
+                                                    Find a Room: <select class="form-control-sm" name="Room">Find Room</select>
+                                                    Find a Movie: <input type="text" class="form-control-sm" name="MovieNameSelect">
+                                                                   <input class="form-control-sm" type="button" value="Search"> -->
+                                                                   <br>
+                                                                   <input class="btn btn-dark" type="button" value="Delete" data-toggle="modal" data-target="#deleteShowingModal">
+                                                                   <input class="btn btn-dark" type="button" value="Add" id="addShowingBut" data-toggle="modal" data-target="#addShowingModal">
+                                                                   <input class="btn btn-dark" type="button" value="Edit" id="editShowingsBut" data-toggle="modal" data-target="#editShowingModal">
+                                                    </form>
+                                                </div>
+
+<!--Region: Add Update Delete modals for Showings Table-->
+                                                <!--add modal for manage showings-->
+                                                <div class="modal" id="addShowingModal">
+                                                        <div class="modal-dialog modal-md modal-dialog-centered">
+                                                            <div class="modal-content">
+                                                                <!--header-->
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Add a Movie Showing</h4>
+                                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                </div>
+                                                                <!--content form-->
+                                                                <div class="modal-body">
+                                                                    <form class="form-horizontal">
+                                                                        <div class="form-group">
+                                                                            <label for="AddShowingTheaterSelect" class="col-sm-4 control-label">Select Theater:</label>
+                                                                            <div class="col-sm-10">
+                                                                                <select class="form-control" id="AddShowingTheaterSelect" name="TheaterSelect">
+                                                                                    <option value="" selected>pick a theater</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="AddShowingRoomSelect" class="col-sm-4 control-label">Pick a Room:</label>
+                                                                            <div class="col-sm-10">
+                                                                                    <select class="form-control" id="AddShowingRoomSelect" name="RoomSelect">
+                                                                                        <option value="" selected>pick a room</option>
+                                                                                        </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="AddShowingMovieSelect" class="col-sm-4 control-label">Pick a Movie:</label>
+                                                                            <div class="col-sm-10">
+                                                                                    <select class="form-control" id="AddShowingMovieSelect" name="MovieSelect">
+                                                                                        <option value="" selected>pick a movie</option>
+                                                                                        </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label for="AddShowingTime" class="col-sm-3 control-label">Show Time:</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input class="form-control" type="text" id="AddShowingTime" name ="ShowingDateTime">
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                                <!--footer-->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-danger" id="AddShowingSubmitBut" data-dismiss="modal">Ok</button>
+                                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+    
+                                                   <!--update delete modals for manage showings-->
+                                                    <div class="modal" id="editShowingModal">
+                                                        <div class="modal-dialog modal-md modal-dialog-centered">
+                                                            <div class="modal-content">
+                                                                <!--header-->
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Edit Showing</h4>
+                                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                </div>
+                                                                <!--content form-->
+                                                                <div class="modal-body">
+                                                                        <form class="form-horizontal">
+                                                                            <div class="form-group">
+                                                                                <label for="EditShowingTheaterSelect" class="col-sm-4 control-label">Select Theater:</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <select class="form-control" id="EditShowingTheaterSelect" name="TheaterSelect">
+                                                                                        <option selected>pick a theater</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="EditShowingRoomSelect" class="col-sm-4 control-label">Pick a Room:</label>
+                                                                                <div class="col-sm-10">
+                                                                                        <select class="form-control" id="EditShowingRoomSelect" name="RoomSelect">
+                                                                                            <option selected>pick a room</option>
+                                                                                            </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="EditShowingMovieSelect" class="col-sm-4 control-label">Pick a Movie:</label>
+                                                                                <div class="col-sm-10">
+                                                                                        <select class="form-control" id="EditShowingMovieSelect" name="MovieSelect">
+                                                                                            <option selected>pick a movie</option>
+                                                                                            </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="EditShowingTime" class="col-sm-3 control-label">Show Time:</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <input class="form-control" type="datetime" id="EditShowingTime" name="ShowingDateTime">
+                                                                                </div>
+                                                                            </div>
+                                                                        </form>
+                                                                    </div>
+                                                                <!--footer-->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-danger" id="EditShowingSubmitBut" data-dismiss="modal">Ok</button>
+                                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+    
+                                                    <!--delete modals for manage showings-->
+                                                    <div class="modal" id="deleteShowingModal">
+                                                        <div class="modal-dialog modal-sm modal-dialog-centered">
+                                                            <div class="modal-content">
+                                                                <!--header-->
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Are you sure?</h4>
+                                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                </div>
+                                                                <!--content form-->
+                                                                <div class="modal-body">
+                                                                    <form class="form-horizontal">
+                                                                        <button type="submit" class="btn btn-danger" id="deleteShowingSubmitBut" data-dismiss="modal">Yes</button>
+                                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                                                    </form>
+                                                                </div>
+                                                                <!--footer-->
+                                                                <div class="modal-footer">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+    <!--End Region-->                                                
+
+                                                <table id="manageShowingsTable" class="display">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Showing ID</th>
+                                                                <th>Show Time</th>                                                                
+                                                                <th>Room No.</th>                                                                
+                                                                <th>Movie</th>                                                                
+                                                                <th>Theater</th>                                                                
+                                                                <th>Theater ID</th>                                                                
+                                                            </tr>
+                                                        </thead>
+                                                    </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                <!--Tickets search menu and table-->
+                                    <div class="tab-pane fade" id="ManageTickets">
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade show active" id="ManageTickets">
+                                                <div class="col-sm-2">
+                                                    <form>
+                                                    <!-- Select a Theater: <select class="form-control-sm" name="TheatreSelect">Find Theatre</select>
+                                                    Find a Room: <select class="form-control-sm" name="RoomSelect">Find Room</select>
+                                                    Find a Customer: <select class="form-control-sm" name="CustomerNameSelect">Find Room</select>
+                                                                   <input class="form-control-sm" type="button" value="Search"> -->
+                                                                   <br>
+                                                                   <input class="btn btn-dark" type="button" value="Delete" data-toggle="modal" data-target="#deleteTicketModal">
+                                                                   <input class="btn btn-dark" type="button" value="Add" id="addTicketBut" data-toggle="modal" data-target="#addTicketModal">
+                                                                   <input class="btn btn-dark" type="button" value="Edit" id="editTicketBut" data-toggle="modal" data-target="#editTicketModal">
+                                                    </form>
+                                                </div>
+
+<!--Region: Add Update Delete modals for tickets Table-->
+                                                <!--add modal for manage movies-->
+                                                <div class="modal" id="addTicketModal">
+                                                    <div class="modal-dialog modal-md modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <!--header-->
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Add a Ticket</h4>
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            </div>
+                                                            <!--content form-->
+                                                            <div class="modal-body">
+                                                                <form class="form-horizontal">
+                                                                    <div class="form-group">
+                                                                        <label for="AddTicketCustomer" class="col-sm-4 control-label">Select Customer:</label>
+                                                                        <div class="col-sm-10">
+                                                                            <select id="AddTicketCustomer" class="form-control-sm" value="Customer" name="CustomerSelectMenu">
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="AddTicketMovie" class="col-sm-2 control-label">Movie:</label>
+                                                                        <div class="col-sm-10">
+                                                                                <select id="AddTicketMovie" class="form-control-sm" value="Movie" name="MovieSelectMenu">
+                                                                                    </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="AddTicketShowTime" class="col-sm-4 control-label">Pick Show-Time:</label>
+                                                                        <div class="col-sm-10">
+                                                                                <select id="AddTicketShowTime" class="form-control-sm" value="Show-Time" name="ShowingSelectMenu">
+                                                                                </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="AddTicketPrice" class="col-sm-4 control-label">Price</label>
+                                                                        <div class="col-sm-10">
+                                                                                <input type="number" id="AddTicketPrice" class="form-control-sm" value="">
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <!--footer-->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" id="AddTicketSubmit" data-dismiss="modal">Ok</button>
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+<!------------------------------------------------UPDATE NAME ATTRIBUTES BELOW THIS LINE------------------------------------------------------------------------>
+
+
+                                               <!--update delete modals for manage movies-->
+                                                <div class="modal" id="editTicketModal">
+                                                    <div class="modal-dialog modal-md modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <!--header-->
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Edit Ticket</h4>
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            </div>
+                                                            <!--content form-->
+                                                             <div class="modal-body">
+                                                                <form class="form-horizontal">
+                                                                    <div class="form-group">
+                                                                        <label for="EditTicketCustomerSelect" class="col-sm-4 control-label">Select Customer:</label>
+                                                                        <div class="col-sm-10">
+                                                                            <select id="EditTicketCustomerSelect" class="form-control-sm" value="Customer">
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="EditTicketMovieSelect" class="col-sm-2 control-label">Movie:</label>
+                                                                        <div class="col-sm-10">
+                                                                                <select id="EditTicketMovieSelect" class="form-control-sm" value="Movie">
+                                                                                    </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="EditTicketShowingSelect" class="col-sm-4 control-label">Pick Show-Time:</label>
+                                                                        <div class="col-sm-10">
+                                                                                <select id="EditTicketShowingSelect" class="form-control-sm" value="Show-Time">
+                                                                                </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="EditTicketPrice" class="col-sm-4 control-label">Price</label>
+                                                                        <div class="col-sm-10">
+                                                                                <input type="number" id="EditTicketPrice" class="form-control-sm" value="">
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <!--footer-->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" id="EditTicketSubmit" data-dismiss="modal">Ok</button>
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!--delete modals for manage movies-->
+                                                <div class="modal" id="deleteTicketModal">
+                                                    <div class="modal-dialog modal-sm modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <!--header-->
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Are you sure?</h4>
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            </div>
+                                                            <!--content form-->
+                                                            <div class="modal-body">
+                                                                <form class="form-horizontal">
+                                                                    <button type="submit" class="btn btn-danger" id="DeleteTicketSubmitBut" data-dismiss="modal">Yes</button>
+                                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                                                </form>
+                                                            </div>
+                                                            <!--footer-->
+                                                            <div class="modal-footer">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+<!--End Region-->                                                
+
+                                                <table id="manageTicketsTable" class="display">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Ticket ID</th>
+                                                                <th>Room ID</th>                                                                
+                                                                <th>Movie</th>                                                                
+                                                                <th>Customer Name</th>                                                                
+                                                                <th>Show Time</th>                                                                
+                                                                <th>Showing ID</th>                                                                
+                                                                <th>Price</th>                                                                
+                                                            </tr>
+                                                        </thead>
+                                                    </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                <!--Rooms search menu and table-->
+                                    <div class="tab-pane fade" id="ManageRooms">
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade show active" id="ManageRooms">
+                                                <div class="col-sm-2">
+                                                    <form>
+                                                    <!-- Select a Theater: <select class="form-control-sm" name="Theatre">Find Theatre</select> -->
+                                                                   <!-- <input class="form-control-sm" type="button" value="Search"> -->
+                                                                   <br>
+                                                                   <input class="btn btn-dark" type="button" value="Delete" data-toggle="modal" data-target="#deleteRoomModal">
+                                                                   <input class="btn btn-dark" type="button" value="Add" id="addRoomBut" data-toggle="modal" data-target="#addRoomModal">
+                                                                   <input class="btn btn-dark" type="button" value="Edit" id="editRoomBut" data-toggle="modal" data-target="#editRoomModal">
+                                                    </form>
+                                                </div>
+
+<!--Region: Add Update Delete modals for tickets Table-->
+                                                <!--add modal for manage movies-->
+                                                <div class="modal" id="addRoomModal">
+                                                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                                                            <div class="modal-content">
+                                                                <!--header-->
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Add a Room</h4>
+                                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                </div>
+                                                                <!--content form-->
+                                                                <div class="modal-body">
+                                                                    <form class="form-horizontal">
+                                                                        <div class="form-group">
+                                                                            <label for="addRoomTheaterSelect" class="col-sm-7 control-label">Select Theater:</label>
+                                                                            <div class="col-sm-10">
+                                                                                <select id="addRoomTheaterSelect" name="addRoomTheaterSelect" class="form-control-sm" value="">
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <label for="addRoomCapacity" class="col-sm-7 control-label">Seating Capacity</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input id="addRoomCapacity" name="addRoomCapacity" class="form-control-sm" type="number">
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                    <!--footer-->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-danger" data-dismiss="modal" id="addRoomSubmitBut">Ok</button>
+                                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    
+    
+                                                   <!--update delete modals for manage movies-->
+                                                    <div class="modal" id="editRoomModal">
+                                                        <div class="modal-dialog modal-md modal-dialog-centered">
+                                                            <div class="modal-content">
+                                                                <!--header-->
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Edit Room</h4>
+                                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                </div>
+                                                                <!--content form-->
+                                                                <div class="modal-body">
+                                                                        <form class="form-horizontal">
+                                                                            <div class="form-group">
+                                                                                <label for="editRoomTheaterSelect" class="col-sm-7 control-label">Select Theater:</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <select id="editRoomTheaterSelect" name="editRoomTheaterSelect" class="form-control-sm" value="Theater">
+                                                                                        <option>Select Theater</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <label for="editRoomCapacity" class="col-sm-7 control-label">Seating Capacity</label>
+                                                                                <div class="col-sm-10">
+                                                                                    <input id="editRoomCapacity" name="editRoomCapacity" class="form-control-sm" type="number">
+                                                                                </div>
+                                                                            </div>
+                                                                        </form>
+                                                                        <!--footer-->
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-danger" id="editRoomSubmitBut" data-dismiss="modal">Ok</button>
+                                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            
+                                                
+                                                    
+    
+                                                    <!--delete modals for manage movies-->
+                                                    <div class="modal" id="deleteRoomModal">
+                                                        <div class="modal-dialog modal-sm modal-dialog-centered">
+                                                            <div class="modal-content">
+                                                                <!--header-->
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Are you sure?</h4>
+                                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                </div>
+                                                                <!--content form-->
+                                                                <div class="modal-body">
+                                                                    <form class="form-horizontal">
+                                                                        <button type="submit" class="btn btn-danger" id="deleteRoomSubmit" data-dismiss="modal">Yes</button>
+                                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                                                    </form>
+                                                                </div>
+                                                                <!--footer-->
+                                                                <div class="modal-footer">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+    <!--End Region-->                                        
+
+                                                <table id="manageRoomsTable" class="display">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Room ID</th>
+                                                                <th>Capacity</th>
+                                                                <th>Theater ID</th>                                                                
+                                                            </tr>
+                                                        </thead>
+                                                    </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Customer search menu and table-->
+                                    <div class="tab-pane fade" id="ManageCustomers">
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade show active" id="ManageCustomers">
+                                                <div class="col-sm-2">
+                                                    <form>
+                                                    <!-- Last Name:  <input class="form-control-sm" type="text" id="CustomerLName">
+                                                    First Name: <input class="form-control-sm" type="text" id="CustomerFName">
+                                                                <input class="form-control-sm" type="button" value="Search"> -->
+                                                                <br>
+                                                                <input class="btn btn-dark" type="button" value="Delete" data-toggle="modal" data-target="#deleteCustomerModal">
+                                                                <input class="btn btn-dark" type="button" value="Add" data-toggle="modal" data-target="#addCustomerModal">
+                                                                <input class="btn btn-dark" type="button" value="Edit" data-toggle="modal" data-target="#editCustomerModal" id="editCustomerBut">
+                                                    </form>
+                                                </div>
+
+<!--Region: Add Update Delete modals for customer Table-->
+                                                <!--add modal for manage customers-->
+                                                <div class="modal" id="addCustomerModal">
+                                                    <div class="modal-dialog modal-md modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <!--header-->
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Add a Customer</h4>
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            </div>
+                                                            <!--content form-->
+                                                            <div class="modal-body">
+                                                                <form class="form-horizontal">
+                                                                    <div class="form-group">
+                                                                        <label for="addCustomerFirstName" class="col-sm-4 control-label">First Name:</label>
+                                                                        <div class="col-sm-10">
+                                                                            <input class="form-control" type="text" id="addCustomerFirstName" name="FirstName" placeholder="First Name">
+                                                                        </div>
+                                                                        <label for="addCustomerLastName" class="col-sm-4 control-label">Last Name:</label>
+                                                                        <div class="col-sm-10">
+                                                                            <input class="form-control" type="text" id="addCustomerLastName" name="LastName" placeholder="Last Name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="addCustomerDOB" class="col-sm-4 control-label">Date of Birth:</label>
+                                                                        <div class="col-sm-10">
+                                                                            <input class="form-control" type="date" id="addCustomerDOB" name ="DOB">
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <!--footer-->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" id="submitNewCustomerBut" data-dismiss="modal">Ok</button>
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                               <!--update delete modals for manage movies-->
+                                                <div class="modal" id="editCustomerModal">
+                                                    <div class="modal-dialog modal-md modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <!--header-->
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Edit Customer</h4>
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            </div>
+                                                            <!--content form-->
+                                                            <div class="modal-body">
+                                                                <form class="form-horizontal">
+                                                                    <div class="form-group">
+                                                                        <label for="customerEditFirstName" class="col-sm-4 control-label">First Name:</label>
+                                                                        <div class="col-sm-10">
+                                                                            <input class="form-control" type="text" id="customerEditFirstName" name="FirstName" value="First Name">
+                                                                        </div>
+                                                                        <label for="customerEditLastName" class="col-sm-4 control-label">Last Name:</label>
+                                                                        <div class="col-sm-10">
+                                                                            <input class="form-control" type="text" id="customerEditLastName" name="LastName" placeholder="Last Name">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="customerEditDOB" class="col-sm-4 control-label">Date of Birth:</label>
+                                                                        <div class="col-sm-10">
+                                                                            <input class="form-control" type="datetime" id="customerEditDOB" name="DOB" placeholder="01/07/1967">
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <!--footer-->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" id="editCustomerSubmitBut" data-dismiss="modal">Ok</button>
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!--delete modals for manage customers-->
+                                                <div class="modal" id="deleteCustomerModal">
+                                                    <div class="modal-dialog modal-sm modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <!--header-->
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Are you sure?</h4>
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            </div>
+                                                            <!--content form-->
+                                                            <div class="modal-body">
+                                                                <form class="form-horizontal">
+                                                                    <button type="submit" class="btn btn-danger" data-dismiss="modal" id="deleteCustomerSubmit">Yes</button>
+                                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                                                                </form>
+                                                            </div>
+                                                            <!--footer-->
+                                                            <div class="modal-footer">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+<!--End Region-->
+
+                                                <table id="manageCustomerTable" class="display">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>CustomerID</th>
+                                                                <th>First Name</th>
+                                                                <th>Last Name</th>
+                                                                <th>Date of Birth</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

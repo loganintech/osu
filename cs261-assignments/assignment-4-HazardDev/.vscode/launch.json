@@ -1,0 +1,20 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		
+		{
+			"name": "(gdb) Launch",
+			"miDebuggerPath": "c:/cygwin64/bin/gdb.exe",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/test",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": true,
+			"MIMode": "gdb"
+		}
+	]
+}
+

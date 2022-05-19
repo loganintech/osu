@@ -1,0 +1,31 @@
+<#import "../layout/defaultLayout.ftl.html" as layout>
+    <@layout.myLayout "Home page">
+
+        <div class="grid-container">
+            <table id="player" class="battleGrid player-grid">
+            </table>
+
+            <div class="divider-line"></div>
+
+            <table id="opponent" class="battleGrid opponent-grid">
+            </table>
+        </div>
+
+        <ul style="list-style-type: none;">
+            <li>Select Ship:</li>
+            <li><a class="ship-selector" id="place_minesweeper"><img id="smallBoatImage" src="/assets/images/smallBoat.png" alt="Place Minesweeper"></a></li>
+            <li><a class="ship-selector" id="place_destroyer"><img id="medBoatImage" src="/assets/images/medBoat.png" alt="Place Destroyer"></a></li>
+            <li><a class="ship-selector" id="place_battleship"><img id="bigBoatImage" src="/assets/images/bigBoat.png" alt="Place Battleship"></a></li>
+            <li><a class="ship-selector" id="place_submarine"><img id="submarineImage" src="/assets/images/submarine.png" alt="Place Submarine"></a></li>
+            <li><input type="checkbox" id="is_vertical">Vertical</input></li>
+            <li><input type="checkbox" id="use_sonar">Sonar</input></li>
+            <li><input type="checkbox" id="is_submerged">Submerged</input></li>
+            <!--<li><a class="sonar-selector" id="use_sonar"><img id="sonarImg" src="/assets/images/sonar.png" alt="Use Sonar" style="width:100px;height:100px;"></a></li>-->
+        </ul>
+
+        <script type="text/javascript" src="/assets/game.js"></script>
+        <script>
+            initGame();
+        </script>
+
+    </@layout.myLayout>

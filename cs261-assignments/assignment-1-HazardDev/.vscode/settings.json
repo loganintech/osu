@@ -1,0 +1,7 @@
+{
+	"files.associations": {
+		"*.toml": "ini",
+		"string.h": "c",
+		"students.h": "c"
+	}
+}

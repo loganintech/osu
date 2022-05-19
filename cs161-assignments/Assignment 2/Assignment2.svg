@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 617 547" style="enable-background:new 0 0 617 547;" xml:space="preserve">
+<style type="text/css">
+	.st0{stroke:#000000;}
+	.st1{fill:url(#SVGID_1_);stroke:#D1461B;}
+	.st2{fill:#FFFFFF;}
+	.st3{font-family:'ArialMT';}
+	.st4{font-size:7.7118px;}
+	.st5{fill:none;stroke:#000000;}
+	.st6{fill:url(#SVGID_2_);stroke:#D1461B;}
+	.st7{font-family:'Arial-BoldMT';}
+	.st8{fill:url(#SVGID_3_);stroke:#3F51B5;}
+	.st9{fill:url(#SVGID_4_);stroke:#3F51B5;}
+	.st10{fill:url(#SVGID_5_);stroke:#D1461B;}
+	.st11{fill:url(#SVGID_6_);stroke:#3F51B5;}
+	.st12{fill:url(#SVGID_7_);stroke:#3F51B5;}
+	.st13{fill:url(#SVGID_8_);stroke:#D1461B;}
+	.st14{fill:url(#SVGID_9_);stroke:#3F51B5;}
+	.st15{fill:url(#SVGID_10_);stroke:#3F51B5;}
+	.st16{fill:url(#SVGID_11_);stroke:#D1461B;}
+	.st17{fill:url(#SVGID_12_);stroke:#3F51B5;}
+	.st18{fill:url(#SVGID_13_);stroke:#3F51B5;}
+	.st19{fill:url(#SVGID_14_);stroke:#3F51B5;}
+	.st20{display:none;}
+	.st21{display:inline;fill:none;stroke:#000000;}
+	.st22{display:inline;stroke:#000000;}
+</style>
+<g id="page0_x2C_1_x5F_graph0" transform="scale(0.771184 0.771184) rotate(0) translate(4 698.6)">
+	<title>FlowChart</title>
+	<g id="node1">
+		<title>nop_block_1</title>
+		<ellipse class="st0" cx="457.6" cy="-681.7" rx="1.8" ry="1.8"/>
+	</g>
+	<g id="node2">
+		<title>ifs_block_2</title>
+		
+			<radialGradient id="SVGID_1_" cx="-840.8066" cy="343.8474" r="1" fx="-840.4066" fy="344.2474" gradientTransform="matrix(125.9641 0 0 -27.7626 105993.0547 8911.2168)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#D1461B"/>
+			<stop  offset="1" style="stop-color:#D1461B"/>
+		</radialGradient>
+		<polygon class="st1" points="81.6,-652.9 -0.1,-634.9 81.6,-616.9 163.3,-634.9 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 40.5844 -632.3894)" class="st2 st3 st4">Should Continue?</text>
+	</g>
+	<g id="edge14">
+		<title>nop_block_1-&gt;ifs_block_2</title>
+		<path class="st5" d="M455.4-681.6c-21.2,0.8-192.3,7.1-242.8,14.7c-29,4.4-61,12.1-86.1,18.9"/>
+		<polygon class="st0" points="127.1,-644.5 116.6,-645.2 125.3,-651.3 		"/>
+	</g>
+	<g id="node3">
+		<title>ifs_block_3</title>
+		
+			<radialGradient id="SVGID_2_" cx="-837.9705" cy="343.8474" r="1" fx="-837.5705" fy="344.2474" gradientTransform="matrix(88.5079 0 0 -27.7626 74259.625 8984.2168)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#D1461B"/>
+			<stop  offset="1" style="stop-color:#D1461B"/>
+		</radialGradient>
+		<polygon class="st6" points="92.6,-579.9 35.2,-561.9 92.6,-543.9 150,-561.9 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 66.0849 -559.3895)" class="st2 st3 st4">player dies</text>
+	</g>
+	<g id="edge1">
+		<title>ifs_block_2-&gt;ifs_block_3</title>
+		<path class="st5" d="M84.2-617.2c1.3,8.3,2.8,18.5,4.2,27.8"/>
+		<polygon class="st0" points="91.9,-589.8 89.9,-579.4 85,-588.8 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 88.5848 -596.8895)" class="st7 st4"> True </text>
+	</g>
+	<g id="node4">
+		<title>process_block_4</title>
+		
+			<radialGradient id="SVGID_3_" cx="-827.2374" cy="343.8474" r="1" fx="-826.8373" fy="344.2474" gradientTransform="matrix(41.6439 0 0 -27.7626 34692.9961 9057.2168)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#3F51B5"/>
+			<stop  offset="1" style="stop-color:#3F51B5"/>
+		</radialGradient>
+		<polygon class="st8" points="270.6,-506.9 216.6,-506.9 216.6,-470.9 270.6,-470.9 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 227.0855 -486.3895)" class="st2 st3 st4">restart</text>
+	</g>
+	<g id="edge2">
+		<title>ifs_block_3-&gt;process_block_4</title>
+		<path class="st5" d="M115.2-551c24.3,11.8,63.4,30.6,92,44.5"/>
+		<polygon class="st0" points="209,-509.5 216.5,-502 205.9,-503.2 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 177.5853 -523.8896)" class="st7 st4"> True </text>
+	</g>
+	<g id="node5">
+		<title>process_block_5</title>
+		
+			<radialGradient id="SVGID_4_" cx="-833.8254" cy="343.8474" r="1" fx="-833.4254" fy="344.2474" gradientTransform="matrix(61.6951 0 0 -27.7626 51545.5391 9057.2168)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#3F51B5"/>
+			<stop  offset="1" style="stop-color:#3F51B5"/>
+		</radialGradient>
+		<polygon class="st9" points="142.6,-506.9 62.6,-506.9 62.6,-470.9 142.6,-470.9 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 69.585 -486.3895)" class="st2 st3 st4">leave the bed</text>
+	</g>
+	<g id="edge3">
+		<title>ifs_block_3-&gt;process_block_5</title>
+		<path class="st5" d="M84.3-546.2c-3.1,7.9-5.4,17.7-2.7,26.4c0.4,1.3,0.8,2.5,1.4,3.8"/>
+		<polygon class="st0" points="86.2,-517.5 87.8,-507 80,-514.2 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 81.5846 -523.8896)" class="st7 st4"> False </text>
+	</g>
+	<g id="edge15">
+		<title>process_block_4-&gt;nop_block_1</title>
+		<path class="st5" d="M247.9-506.9c9.9-36.9,37.9-121,95.7-159.9c19.4-13.1,98.6-14.6,112-14.8"/>
+	</g>
+	<g id="node6">
+		<title>ifs_block_6</title>
+		
+			<radialGradient id="SVGID_5_" cx="-837.9705" cy="343.8474" r="1" fx="-837.5705" fy="344.2474" gradientTransform="matrix(88.508 0 0 -27.7626 74390.6953 9120.2168)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#D1461B"/>
+			<stop  offset="1" style="stop-color:#D1461B"/>
+		</radialGradient>
+		<polygon class="st10" points="223.6,-443.9 166.2,-425.9 223.6,-407.9 281,-425.9 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 197.0853 -423.3897)" class="st2 st3 st4">player dies</text>
+	</g>
+	<g id="edge4">
+		<title>process_block_5-&gt;ifs_block_6</title>
+		<path class="st5" d="M137.3-470.8c17.6,9.1,38.7,20.1,55.7,29"/>
+		<polygon class="st0" points="194.6,-444.9 201.9,-437.2 191.4,-438.7 		"/>
+	</g>
+	<g id="node7">
+		<title>process_block_7</title>
+		
+			<radialGradient id="SVGID_6_" cx="-827.2374" cy="343.8474" r="1" fx="-826.8373" fy="344.2474" gradientTransform="matrix(41.6439 0 0 -27.7626 34832.0039 9193.2168)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#3F51B5"/>
+			<stop  offset="1" style="stop-color:#3F51B5"/>
+		</radialGradient>
+		<polygon class="st11" points="409.6,-370.9 355.6,-370.9 355.6,-334.9 409.6,-334.9 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 366.0852 -350.3897)" class="st2 st3 st4">restart</text>
+	</g>
+	<g id="edge5">
+		<title>ifs_block_6-&gt;process_block_7</title>
+		<path class="st5" d="M246.9-414.9c18.1,8.5,44,20.6,66.7,31c10.5,4.8,22,10,32.4,14.7"/>
+		<polygon class="st0" points="347.6,-372.3 355.3,-365 344.8,-365.9 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 313.5857 -387.8898)" class="st7 st4"> True </text>
+	</g>
+	<g id="node8">
+		<title>process_block_8</title>
+		
+			<radialGradient id="SVGID_7_" cx="-837.9062" cy="343.8474" r="1" fx="-837.5062" fy="344.2474" gradientTransform="matrix(87.915 0 0 -27.7626 73893.0781 9193.2168)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#3F51B5"/>
+			<stop  offset="1" style="stop-color:#3F51B5"/>
+		</radialGradient>
+		<polygon class="st12" points="285.6,-370.9 171.6,-370.9 171.6,-334.9 285.6,-334.9 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 178.585 -350.3897)" class="st2 st3 st4">brave nuclear winter</text>
+	</g>
+	<g id="edge6">
+		<title>ifs_block_6-&gt;process_block_8</title>
+		<path class="st5" d="M215.6-410c-3,7.8-5.1,17.4-3,26.1c0.3,1.1,0.6,2.2,0.9,3.3"/>
+		<polygon class="st0" points="216.9,-381.6 217.4,-371 210.4,-378.9 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 212.5856 -387.8898)" class="st7 st4"> False </text>
+	</g>
+	<g id="edge16">
+		<title>process_block_7-&gt;nop_block_1</title>
+		<path class="st5" d="M386.5-371.1c2.8-14.7,6.1-36,6.1-54.8c0-209,0-209,0-209c0-26,34.6-39,53.3-44.1"/>
+		<polygon class="st0" points="445.2,-682.4 455.7,-681.3 446.8,-675.6 		"/>
+	</g>
+	<g id="node9">
+		<title>ifs_block_9</title>
+		
+			<radialGradient id="SVGID_8_" cx="-837.9705" cy="343.8474" r="1" fx="-837.5705" fy="344.2474" gradientTransform="matrix(88.508 0 0 -27.7626 74521.6875 9256.2168)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#D1461B"/>
+			<stop  offset="1" style="stop-color:#D1461B"/>
+		</radialGradient>
+		<polygon class="st13" points="354.6,-307.9 297.2,-289.9 354.6,-271.9 412,-289.9 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 328.085 -287.3899)" class="st2 st3 st4">player dies</text>
+	</g>
+	<g id="edge7">
+		<title>process_block_8-&gt;ifs_block_9</title>
+		<path class="st5" d="M264.7-334.8c18.4,9.2,40.6,20.3,58.3,29.2"/>
+		<polygon class="st0" points="325,-308.6 332.3,-301 321.8,-302.4 		"/>
+	</g>
+	<g id="node10">
+		<title>process_block_10</title>
+		
+			<radialGradient id="SVGID_9_" cx="-827.2374" cy="343.8474" r="1" fx="-826.8373" fy="344.2474" gradientTransform="matrix(41.644 0 0 -27.7626 34957.0273 9329.2168)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#3F51B5"/>
+			<stop  offset="1" style="stop-color:#3F51B5"/>
+		</radialGradient>
+		<polygon class="st14" points="534.6,-234.9 480.6,-234.9 480.6,-198.9 534.6,-198.9 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 491.0852 -214.39)" class="st2 st3 st4">restart</text>
+	</g>
+	<g id="edge8">
+		<title>ifs_block_9-&gt;process_block_10</title>
+		<path class="st5" d="M377.5-279c24.8,11.8,64.8,30.9,93.9,44.8"/>
+		<polygon class="st0" points="472.9,-237.3 480.4,-229.9 469.9,-231 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 440.5851 -251.8894)" class="st7 st4"> True </text>
+	</g>
+	<g id="node11">
+		<title>process_block_11</title>
+		
+			<radialGradient id="SVGID_10_" cx="-835.209" cy="343.8474" r="1" fx="-834.809" fy="344.2474" gradientTransform="matrix(68.6354 0 0 -27.7626 57687.4727 9329.2168)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#3F51B5"/>
+			<stop  offset="1" style="stop-color:#3F51B5"/>
+		</radialGradient>
+		<polygon class="st15" points="407.1,-234.9 318.1,-234.9 318.1,-198.9 407.1,-198.9 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 325.0851 -214.39)" class="st2 st3 st4">crash the plane</text>
+	</g>
+	<g id="edge9">
+		<title>ifs_block_9-&gt;process_block_11</title>
+		<path class="st5" d="M346.5-274.3c-3.1,7.9-5.4,17.7-2.9,26.4c0.3,1.2,0.8,2.5,1.2,3.7"/>
+		<polygon class="st0" points="348,-245.7 349.2,-235.1 341.7,-242.6 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 343.5853 -251.8894)" class="st7 st4"> False </text>
+	</g>
+	<g id="edge17">
+		<title>process_block_10-&gt;nop_block_1</title>
+		<path class="st5" d="M513.8-234.9c4.5-14.6,9.8-35.9,9.8-54.9c0-345,0-345,0-345c0-26.2-35.2-39.1-54.2-44.1"/>
+		<polygon class="st0" points="468.4,-675.7 459.5,-681.3 470,-682.5 		"/>
+	</g>
+	<g id="node12">
+		<title>ifs_block_12</title>
+		
+			<radialGradient id="SVGID_11_" cx="-837.9705" cy="343.8474" r="1" fx="-837.5705" fy="344.2474" gradientTransform="matrix(88.508 0 0 -27.7626 74645.6875 9392.2168)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#D1461B"/>
+			<stop  offset="1" style="stop-color:#D1461B"/>
+		</radialGradient>
+		<polygon class="st16" points="478.6,-171.9 421.2,-153.9 478.6,-135.9 536,-153.9 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 452.0852 -151.3895)" class="st2 st3 st4">player dies</text>
+	</g>
+	<g id="edge10">
+		<title>process_block_11-&gt;ifs_block_12</title>
+		<path class="st5" d="M395.8-198.8c16.6,9,36.4,19.8,52.6,28.6"/>
+		<polygon class="st0" points="450.3,-173.2 457.4,-165.4 446.9,-167.1 		"/>
+	</g>
+	<g id="node13">
+		<title>process_block_13</title>
+		
+			<radialGradient id="SVGID_12_" cx="-827.2374" cy="343.8474" r="1" fx="-826.8373" fy="344.2474" gradientTransform="matrix(41.6439 0 0 -27.7626 35104.0039 9465.2168)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#3F51B5"/>
+			<stop  offset="1" style="stop-color:#3F51B5"/>
+		</radialGradient>
+		<polygon class="st17" points="681.6,-98.9 627.6,-98.9 627.6,-62.9 681.6,-62.9 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 638.0854 -78.3895)" class="st2 st3 st4">restart</text>
+	</g>
+	<g id="edge11">
+		<title>ifs_block_12-&gt;process_block_13</title>
+		<path class="st5" d="M502.4-143.3c19.6,8.6,48.1,21.1,73.2,31.4c13.8,5.7,29.1,11.7,42.5,17"/>
+		<polygon class="st0" points="619.4,-98.2 627.4,-91.3 616.8,-91.6 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 575.5851 -115.8896)" class="st7 st4"> True </text>
+	</g>
+	<g id="node14">
+		<title>process_block_14</title>
+		
+			<radialGradient id="SVGID_13_" cx="-840.9536" cy="343.8474" r="1" fx="-840.5535" fy="344.2474" gradientTransform="matrix(128.7878 0 0 -27.7626 108783.1016 9465.2168)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#3F51B5"/>
+			<stop  offset="1" style="stop-color:#3F51B5"/>
+		</radialGradient>
+		<polygon class="st18" points="562.1,-98.9 395.1,-98.9 395.1,-62.9 562.1,-62.9 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 402.0853 -78.3895)" class="st2 st3 st4">wake up neo, it was all a dream</text>
+	</g>
+	<g id="edge12">
+		<title>ifs_block_12-&gt;process_block_14</title>
+		<path class="st5" d="M474.1-137.3c-1,4.6-2,9.7-2.5,14.4c-0.5,4.4-0.4,9,0.1,13.5"/>
+		<polygon class="st0" points="475.2,-109.7 473.3,-99.2 468.3,-108.6 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 471.5852 -115.8896)" class="st7 st4"> False </text>
+	</g>
+	<g id="edge18">
+		<title>process_block_13-&gt;nop_block_1</title>
+		<path class="st5" d="M654.6-99.2c0-14.8,0-36.1,0-54.7c0-481,0-481,0-481c0-38.1-141.6-45.2-184.7-46.5"/>
+		<polygon class="st0" points="469.7,-677.9 459.8,-681.7 469.9,-684.9 		"/>
+	</g>
+	<g id="node15">
+		<title>process_block_15</title>
+		
+			<radialGradient id="SVGID_14_" cx="-830.923" cy="343.8474" r="1" fx="-830.5229" fy="344.2474" gradientTransform="matrix(50.8981 0 0 -27.7626 42983.0234 9528.2168)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0" style="stop-color:#3F51B5"/>
+			<stop  offset="1" style="stop-color:#3F51B5"/>
+		</radialGradient>
+		<polygon class="st19" points="723.6,-35.9 657.6,-35.9 657.6,0.1 723.6,0.1 		"/>
+		<text transform="matrix(1.2967 0 0 1.2967 664.5856 -15.3897)" class="st2 st3 st4">game ends</text>
+	</g>
+	<g id="edge13">
+		<title>process_block_14-&gt;process_block_15</title>
+		<path class="st5" d="M539.3-62.8c34.7,10.3,77.3,23,108.4,32.2"/>
+		<polygon class="st0" points="648.9,-33.9 657.5,-27.7 646.9,-27.2 		"/>
+	</g>
+	<g id="edge19" class="st20">
+		<title>process_block_15-&gt;nop_block_1</title>
+		<path class="st21" d="M723.8-25.4c27.4-8.4,61.8-25,61.8-55.5c0-554,0-554,0-554c0-32.6-256.5-44.1-315.8-46.4"/>
+		<polygon class="st22" points="469.5,-677.8 459.7,-681.6 469.8,-684.8 		"/>
+	</g>
+</g>
+</svg>

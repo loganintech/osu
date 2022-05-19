@@ -1,0 +1,25 @@
+{
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch",
+				"type": "cppdbg",
+				"request": "launch",
+				"osx": {
+					"program": "${workspaceRoot}/test"
+				},
+				"windows": {
+					"MIMode": "gdb",
+					"miDebuggerPath": "c:/cygwin64/bin/gdb.exe",
+					"program": "${workspaceRoot}/main.exe"
+				},
+				"args": [],
+				"stopAtEntry": false,
+				"cwd": "${workspaceRoot}",
+				"environment": [],
+				"externalConsole": true,
+				"MIMode": "lldb"
+			}
+			
+		]
+	}

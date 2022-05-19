@@ -1,0 +1,13 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "quizthree",
+            "dialect": "MariaDB",
+            "name": "Quiz Three",
+            "password": "quizthree",
+            "port": 3306,
+            "server": "localhost",
+            "username": "quizthree"
+        }
+    ]
+}

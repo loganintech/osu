@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.toml": "ini",
+        "*.cmp": "html",
+        "*.cls": "java",
+        "stdlib.h": "c",
+        "pthread.h": "c",
+        "types.h": "c"
+    }
+}

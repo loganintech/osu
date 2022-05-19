@@ -1,0 +1,186 @@
+/* Add additional stylesheets below
+-------------------------------------------------- */
+.container{
+    background-color: mintcream;
+}
+
+.battleGrid {
+    border: 1px solid black;
+    border-spacing: 0px;
+}
+
+.battleGrid tr {
+    border: 1px solid black;
+    height: 50px;
+}
+
+.battleGrid td {
+    border: 1px solid black;
+}
+
+td:hover {
+    background-color: gray;
+}
+
+.placed {
+    background-color: gray;
+}
+
+.occupied {
+    background-color: black;
+}
+
+.hit {
+    background-image: url("../images/hitmarker.png");
+    background-position: center;
+    background-size: cover;
+
+}
+
+.sink {
+    background-color: red;
+}
+
+.captains {
+    background-color: red;
+}
+
+.miss {
+    background-image: url("../images/miss.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.sonar {
+    background-color: #aaa;
+}
+
+.opponent-grid {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: lightskyblue;
+}
+
+.player-grid {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: lightskyblue;
+}
+
+.divider-line {
+    position: absolute;
+    left: 50%;
+    height: 500px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.grid-container {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: auto 20px auto;
+    grid-template-rows: auto;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 20px;
+    width: 60%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.errortext {
+    color: black;
+    font-family: "Franklin Gothic", sans-serif;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.modaltext {
+    color: black;
+    font-family: "Franklin Gothic", sans-serif;
+    font-size: 50px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.picture {
+    margin-left: 43%;
+    margin-right: 50%;
+}
+
+.ship-selector:hover {
+    border-bottom: 2px solid lightskyblue;
+}
+
+.ship-selector:active {
+    border-bottom: 2px solid black;
+}
+
+.game-title-box {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    margin: auto;
+}
+
+.game-title {
+    margin: auto;
+    text-align: center;
+}
+
+.header-sep {
+    border: 5px solid black;
+}
+
+li {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: auto;
+    font-size: 22px;
+    text-decoration: underline;
+
+}
+
+#is_vertical {
+    text-decoration: overline !important;
+}
+
+.sonar-color {
+    background-color: grey;
+}

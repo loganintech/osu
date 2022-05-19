@@ -1,0 +1,7 @@
+{
+	"files.associations": {
+		"*.toml": "ini",
+		"iostream": "cpp",
+		"xstring": "cpp"
+	}
+}

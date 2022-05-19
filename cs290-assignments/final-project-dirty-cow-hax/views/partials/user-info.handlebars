@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="/user-info/user-info.css">
+
+<div class="user-info-container">
+    <div class="name">{{name}}</div>
+    <pre>Age: </pre>
+    <div class="age">{{age}}</div>
+
+    {{#if entries.length}}
+        <pre class="entries"> Entries: {{entries.length}}</pre>
+    {{/if}}
+    {{#if home}}
+        <button class="go-button" onclick="window.location = '/people/{{_id}}'">Go!</button>
+    {{/if}}
+</div>

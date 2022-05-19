@@ -1,0 +1,152 @@
+html, body {
+	/* width: 100%; */
+	/* overflow-x: hidden; */
+	font-family: "Roboto Slab";
+}
+body {
+	margin: 0px;
+}
+
+header {
+	width:            100%;
+	display:          inline-flex;
+	background-color: #000000;
+	overflow:         hidden;
+	white-space:      nowrap;
+}
+
+.site-title {
+	position:      relative;
+	top:           10px;
+	font-size:     65px;
+	margin-bottom: 0px;
+	margin-left:   10px;
+}
+
+.site-title a {
+	color: white;
+	text-decoration: none;
+}
+
+.content {
+	display: flex;
+}
+
+.filter-container {
+	font-family:      "Roboto";
+	width:            200px;
+	padding:          5px 15px 15px 15px;
+	margin-left:      5px;
+	background-color: #F0F0F0;
+	margin-right:     20px;
+	height:           350px;
+}
+
+.filter-input-container {
+	justify-content: space-around;
+	padding:         3px 0px 3px 0px;
+	display:         flex;
+	flex-direction:  row;
+}
+
+.filter-input-label {
+	flex-shrink:  1;
+	flex-grow:    1;
+	margin-right: 5px;
+}
+
+.filter-fieldset {
+	width: 100%;
+}
+
+#filter-city {
+	width: 		 160px;
+	margin-left: 20px;
+}
+
+#filter-min-price {
+	width: 		  63px;
+	margin-right: 10px;
+}
+
+#filter-max-price {
+	width: 63px;
+}
+
+.action-button {
+	width:            98%;
+	height:           50px;
+	margin-top:       10px;
+	color:            white;
+	background-color: black;
+	border:           solid 2px;
+	border-radius:    10px;
+	font-size:        20px;
+}
+
+.action-button:hover {
+	background-color: rgba(241, 135, 36, 0.61);
+	color:            black;
+}
+
+#results {
+	display:        flex;
+	flex-direction: row;
+	flex-wrap:      wrap;
+	font-family:    "Roboto";
+}
+
+.result {
+	border:        solid 2px #ECECEC;
+	border-radius: 2px;
+	width:         350px;
+	margin-right:  20px;
+	height:        330px;
+	padding:       10px 1px 10px 10px;
+	margin-bottom: 20px;
+}
+
+.result img {
+	width:      	340px;
+	max-height: 	300px;
+	padding-bottom: 10px;
+}
+
+.result a {
+	text-decoration: 	none;
+	color:           #DC4405;
+}
+
+.result a:hover {
+	text-decoration: underline;
+}
+
+.result-price {
+	background-color: #F8F8F8;
+	border:           solid 1px #DFDEDE;
+	border-radius:    2px;
+	padding:          2px;
+}
+
+#sell-something-button {
+	position:         fixed;
+	right:            50px;
+	bottom:           50px;
+	float:            right;
+	background-color: orange;
+	border:           1px solid rgba(0, 0, 0, 0);
+	border-radius:    50%;
+	width:            50px;
+	height:           50px;
+	color:            white;
+	font-size:        30px;
+	box-shadow:       6px 6px 10px -4px rgba(0, 0, 0, 0.22);
+}
+
+#sell-something-button:hover {
+	right:     45px;
+	bottom:    45px;
+	width:     60px;
+	height:    60px;
+	font-size: 40px;
+}

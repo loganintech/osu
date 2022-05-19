@@ -1,0 +1,7 @@
+[package]
+name = "otp_dec_d"
+version = "0.1.0"
+authors = ["Logan Saso <sasol@oregonstate.edu>"]
+
+[dependencies]
+otp_lib = { path = "../otp_lib" }

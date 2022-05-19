@@ -1,0 +1,30 @@
+{{> header}}
+<link rel="stylesheet" href="/main/main.css">
+<script src="/main/main.js" defer></script>
+
+<button class="action-button" id="entry-button">Add Entry</button>
+
+
+
+{{> user-info userInfo}}
+
+<div class='chart'>
+    {{> chart}}
+</div>
+
+<div class="entryContainer">
+    {{#each entries}}
+        {{> weight-entry this}}
+    {{/each}}
+</div>
+
+<div class="hidden" id="entry-modal">
+    <div class="user-info-prompt">
+        <h2 class="user-info-header">Add An Entry</h2>
+        <input type="text" name="weight-input" id="weight-input" class="weight-input prompt-input" value="Input Weight">
+        <button id="create-button" class="create-button">Create</button>
+    </div>
+</div>
+<div id='entry-modal-backdrop' class="hidden modal-background"></div>
+
+

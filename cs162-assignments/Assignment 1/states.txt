@@ -1,0 +1,8 @@
+State with Largest Population: South_Carolina
+The county with the Largest Population: Lane
+These counties are the richest: 
+These are the average household costs for each county: 250000 150000 80000 20000 
+These are the states sorted by population: South_Carolina Oregon 
+These are the states sorted by name: Oregon South_Carolina 
+These are the counties sorted by name: Anderson Benton Lane Pickens 
+These are the counties sorted by population: 

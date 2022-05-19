@@ -1,0 +1,9 @@
+[submodule "assignment-1-loganintech"]
+	path = assignment-1-loganintech
+	url = https://github.com/osu-cs480-sp20/assignment-1-loganintech
+[submodule "assignment-2-loganintech"]
+	path = assignment-2-loganintech
+	url = git@github.com:osu-cs480-sp20/assignment-2-loganintech
+[submodule "assignment-3-loganintech"]
+	path = assignment-3-loganintech
+	url = git@github.com:osu-cs480-sp20/assignment-3-loganintech.git

@@ -1,0 +1,1 @@
+To run the following program, use the command "py /src/main.py" when in the commandTrees directory.

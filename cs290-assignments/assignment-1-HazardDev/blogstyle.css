@@ -1,0 +1,79 @@
+body, html {
+	width: 100%;
+}
+
+.grid-container {
+	display: grid;
+}
+
+@media only screen and (min-width: 701px) {
+	.grid-container {
+		grid-template-rows: auto;
+		grid-template-columns: 15% 50% 20% 15%;
+		grid-template-areas:
+		". header header ."
+		". body footer .";
+	}
+
+	.footer {
+		grid-template-areas: "as1" "as2" "as3" "as4" "as5";
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.grid-container {
+		grid-template-rows: auto;
+		grid-template-columns: 20% 60% 20%;
+		grid-template-areas: 
+		". header ."
+		". body ."
+		". footer .";
+	}
+
+	.footer {
+		grid-template-areas: "as1 as2 as3 as4 as5";
+	}
+}
+
+.header {
+	justify-self: center;
+	grid-area: header;
+}
+
+.body {
+	grid-area: body;
+}
+
+.footer {
+	padding-top: 20px;
+	grid-area: footer;
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: auto;
+
+}
+
+.as1 {
+	justify-self: center;
+	grid-area: as1;
+}
+
+.as2 {
+		justify-self: center;
+		grid-area: as2;
+}
+
+.as3 {
+	justify-self: center;
+	grid-area: as3;
+}
+
+.as4 {
+	justify-self: center;
+	grid-area: as4;
+}
+
+.as5 {
+	justify-self: center;
+	grid-area: as5;
+}

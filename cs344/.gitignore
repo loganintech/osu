@@ -1,0 +1,14 @@
+**/target
+**/*.txt
+**/matrix.sh
+
+**/target
+**/*.txt
+
+**/**/target
+**/**/*.txt
+
+**/*_room
+**/*.exe
+
+**/*.out

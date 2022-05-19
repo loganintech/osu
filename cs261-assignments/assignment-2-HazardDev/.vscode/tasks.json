@@ -1,0 +1,123 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"taskName": "Build Release",
+			"type": "shell",
+			"command": "make",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"promptOnClose": false,
+			"presentation": {
+				"echo": true,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "dedicated"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"identifier": "release"
+		},
+		{
+			"taskName": "Clean and Build Release",
+			"type": "shell",
+			"command": "make",
+			"promptOnClose": false,
+			"presentation": {
+				"echo": true,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "dedicated"
+			},
+			// "group": {
+			// 	"kind": "build",
+			// 	"isDefault": true
+			// },
+			"problemMatcher": [
+				"$gcc"
+			],
+			"dependsOn": "clean"
+		},
+		{
+			"taskName": "Build Debug",
+			"type": "shell",
+			"command": "make debug=-g",
+			"promptOnClose": false,
+			"presentation": {
+				"echo": true,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "dedicated"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"identifier": "debug"
+		},
+		{
+			"taskName": "Clean and Build Debug",
+			"type": "shell",
+			"command": "make debug=-g",
+			"promptOnClose": false,
+			"presentation": {
+				"echo": true,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "dedicated"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"dependsOn": "clean"
+		},
+		{
+			"taskName": "Clean",
+			"type": "shell",
+			"command": "make clean",
+			"problemMatcher": [],
+			"presentation": {
+				"echo": true,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "dedicated"
+			},
+			"identifier": "clean"
+		},
+		{
+			"taskName": "Run",
+			"type": "shell",
+			"command": "./test",
+			"windows": {
+				"command": "./test.exe"
+			},
+			"problemMatcher": [],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared"
+			},
+			"identifier": "run",
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			}
+		},
+		{
+			"taskName": "Leak Check",
+			"type": "shell",
+			"command": "valgrind --leak-check=full ./test",
+			"problemMatcher": [],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared"
+			},
+			"identifier": "valgrind"
+		}
+	]
+}

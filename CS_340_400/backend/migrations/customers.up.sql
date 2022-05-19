@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS `customers` (
+  `customer_id` INT(16) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `fname` VARCHAR(255),
+  `lname` VARCHAR(255),
+  `birthday` DATE
+) ENGINE = INNODB DEFAULT CHARSET = utf8;

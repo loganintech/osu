@@ -1,0 +1,16 @@
+[
+{"array_size": 256, "control_time": 0.000000, "simd_time": 0.000000},
+{"array_size": 512, "control_time": 0.000000, "simd_time": 0.000000},
+{"array_size": 1024, "control_time": 0.000000, "simd_time": 0.000000},
+{"array_size": 2048, "control_time": 0.000000, "simd_time": 0.000000},
+{"array_size": 4096, "control_time": 0.000000, "simd_time": 0.000000},
+{"array_size": 8192, "control_time": 0.000000, "simd_time": 0.000000},
+{"array_size": 16384, "control_time": 0.000000, "simd_time": 0.000000},
+{"array_size": 32768, "control_time": 0.000000, "simd_time": 0.000000},
+{"array_size": 65536, "control_time": 0.000000, "simd_time": 0.000000},
+{"array_size": 131072, "control_time": 0.000000, "simd_time": 0.000000},
+{"array_size": 262144, "control_time": 0.000000, "simd_time": 0.000000},
+{"array_size": 524288, "control_time": 0.000000, "simd_time": 0.000000},
+{"array_size": 1048576, "control_time": 0.000000, "simd_time": 0.000000},
+{"array_size": 2097152, "control_time": 0.000000, "simd_time": 0.000000},
+]

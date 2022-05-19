@@ -1,0 +1,9 @@
+[package]
+name = "wintime"
+version = "0.1.0"
+authors = ["Logan Saso <logan.saso2016@gmail.com>"]
+
+[dependencies]
+
+[lib]
+crate-type = ["staticlib"]

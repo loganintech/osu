@@ -1,0 +1,2 @@
+cs434/competition/data/x_test.csv filter=lfs diff=lfs merge=lfs -text
+cs434/competition/data/x_train.csv filter=lfs diff=lfs merge=lfs -text

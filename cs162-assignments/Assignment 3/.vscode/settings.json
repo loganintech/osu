@@ -1,0 +1,23 @@
+{
+	"files.associations": {
+		"string": "cpp",
+		"__config": "cpp",
+		"cstddef": "cpp",
+		"exception": "cpp",
+		"initializer_list": "cpp",
+		"new": "cpp",
+		"stdexcept": "cpp",
+		"typeinfo": "cpp",
+		"iosfwd": "cpp",
+		"cstdlib": "cpp",
+		"__bit_reference": "cpp",
+		"algorithm": "cpp",
+		"bitset": "cpp",
+		"iterator": "cpp",
+		"memory": "cpp",
+		"utility": "cpp",
+		"__tuple": "cpp",
+		"iostream": "cpp",
+		"ostream": "cpp"
+	}
+}

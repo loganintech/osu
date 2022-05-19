@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@types/bluebird": "^3.5.27",
+    "@types/express": "^4.17.1",
+    "@types/mysql": "^2.15.7",
+    "@types/mysql2": "types/mysql2",
+    "express": "^4.17.1",
+    "mysql2": "^1.7.0",
+    "tslint-config-airbnb": "^5.11.2"
+  },
+  "name": "diagnostic",
+  "version": "1.0.0",
+  "description": "A diagnostic program for databases class.",
+  "main": "dist/index.js",
+  "author": "Logan Saso",
+  "license": "MIT"
+}
